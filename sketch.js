@@ -20,8 +20,10 @@ function setup() {
 	createCanvas(800, 700);
 	
 	
-	rect1 = new Rect(350,700,20,200);
+	rect1 = new Rect(350,650,200,20,{isStatic:true} );
 
+	rectSprite1=createSprite(350,650,200,20);
+	rectSprite1.shapeColor=("red");
 
 	packageSprite=createSprite(width/2, 80, 10,10);
 	packageSprite.addImage(packageIMG)
@@ -56,9 +58,12 @@ function draw() {
   rectMode(CENTER);
   background(0);
   packageSprite.x= packageBody.position.x 
-  packageSprite.y= packageBody.position.y 
+  packageSprite.y= packageBody.position.y
+  
+  
 
- 
+
+
 
   rect1.display();
   drawSprites();
