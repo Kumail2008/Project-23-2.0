@@ -1,20 +1,24 @@
-class Rect {
-    constructor(x, y, width, height) {
-      var options = {
-          'restitution':0.8,
-          'friction':0.3,
-          'density':1.0,
-          isStatic:true
-          
-      }
-      this.body = Bodies.rectangle(x, y, width, height, options,);
-      this.width = width;
-      this.height = height;
+class Rect{
+
+  constructor(x,y,width,height){
       
-      World.add(world, this.body);
-    }
-    display(){
-      rectMode(CENTER);
-      rect(0,0, this.width, this.height);
-    }
+      var options={
+      
+          isStatic:true
+      }
+      this.body= Bodies.rectangle(x,y,width,height,options);
+      this.width=width;
+      this.height=height;
+      World.add(world,this.body);
   }
+
+  display(){
+    var pos= this.body.position;
+    rectMode(CENTER);
+    fill(255,0,0);
+    rect(pos.x,pos.y,this.width,this.height);
+    console.log(pos.y);
+      
+  }
+
+};
